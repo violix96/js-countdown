@@ -1,14 +1,19 @@
-// reset js 
 'use strict';
 
 console.log('Ciao mondo');
 
-
 let secondi = 10;
 
 function countDown(){
-    console.log('Buon anno!');
-    alert('Buon anno!');
+    if (secondi === 0){
+        console.log('Buon anno!');
+        alert('Buon anno!');
+        clearInterval(clock);
+    } else {
+        console.log(secondi);
+        secondi--;
+    }
 }
 
-setTimeout(countDown, secondi * 1000);
+
+const clock = setInterval(countDown, 1000);
